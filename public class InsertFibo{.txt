@@ -1,0 +1,20 @@
+public class InsertFibo{
+   
+   
+    public  void insertList(Integer n){
+        List<Fibonacci__c> tmplist=new List<Fibonacci__c>();
+        Integer next;
+        Integer first=0;
+        Integer second=1;
+        for(Integer i=0;i<n;i++){
+            Fibonacci__c obj=new Fibonacci__c();
+                next=first+second;
+                obj.Name=string.valueof(next);
+                tmplist.add(obj);
+                first=second;
+                second=next;    
+        }
+        insert tmplist;
+    }
+    
+}
